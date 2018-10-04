@@ -60,3 +60,75 @@ A navegação dentro do ionic funciona como o gerenciamento de uma pilha de pág
 ```
 
 - `rootPage` é setada em `app.component.ts` e seu valor padrão é _HomePage_.
+
+## Navegação
+
+Agora considere que da Home (página criada automaticamente pelo ionic) você queira navegar para a página de usuários. Existem duas formas de fazer isso:
+### Através de um método
+
+**home.html**
+```html
+<ion-header>
+	<ion-navbar>
+		<ion-title>categories</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<button ion-button (click)="onGoToUsers()">Users</button>
+</ion-content>
+```
+
+**home.ts**
+```js
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { UsersPage } from '../users/users';
+
+
+@IonicPage()
+@Component({
+		selector: 'page-home',
+		templateUrl: 'home.html',
+	})
+	export class HomePage {
+
+		constructor(public navCtrl: NavController) {}
+
+		onGoToUsers() {
+		    this.navCtrl.push(UsersPage);
+		}
+	}
+	
+```
+### Através de diretivas de navegação
+
+**home.html**
+```html
+<ion-header>
+	<ion-navbar>
+		<ion-title>categories</ion-title>
+	</ion-navbar>
+</ion-header>
+	
+<ion-content padding>
+	<button ion-button [push]="userPage">Users</button>
+</ion-content>
+```
+
+**home.ts**
+```js
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { UsersPage } from '../users/users';
+
+
+@IonicPage()
+@Component({
+		selector: 'page-home',
+		templateUrl: 'home.html',
+	})
+	export class HomePage {
+		userPage = UsersPage;
+	}
+```
