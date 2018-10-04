@@ -18,3 +18,40 @@ A navegação dentro do ionic funciona como o gerenciamento de uma pilha de pág
 
     - `rootPage` é setada em `app.component.ts` e seu valor padrão é _HomePage_.
 
+### Criação de novas páginas e navegação
+
+Através do ionic CLI é possível criar novas páginas:
+```
+	ionic generate page users
+```
+
+Isso criará uma pasta em `src` contendo o template, a página de estilos e a controller: `users.html`, `users.scss` e `users.ts`, respectivamente.
+
+Dentro do arquivo do template, podem ser utilizados os [https://ionicframework.com/docs/components/](componentes visuais) presentes na [https://ionicframework.com/docs/](documentação do ionic).
+
+**IMPORTANTE**
+É necessário registrar `UsersPage` em `app.module.ts` dentro de `declarations` e `entryComponents`:
+
+```
+	import { ErrorHandler, NgModule } from '@angular/core';
+	import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+	import { MyApp } from './app.component';
+	import { UsersPage } from '../pages/users/users';
+	
+@NgModule({
+    declarations: [
+        MyApp,
+        HomePage,
+    ],
+    imports: [
+        IonicModule.forRoot(MyApp),
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        HomePage,
+    ],
+})
+export class AppModule {}
+
+```
