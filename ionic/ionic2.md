@@ -6,21 +6,7 @@ Se você é, de alguma forma, familiar ao angular, provavelmente conhece o conce
 
 O ionic extende esse conceito de componentes à páginas, que, em poucas palavras, são _components que ocupam toda a tela e devem ser chamados pela controller de navegação do ionic_.
 
-### Navegação
-A navegação dentro do ionic funciona como o gerenciamento de uma pilha de páginas.
-
-É possível empilhar e desempilhar páginas e a página visualizada é sempre a página que está no topo.
-
-`ion-nav` inicializa a pilha de páginas.
-
-```html
-<ion-nav [root]="rootPage"><ion-nav>
-
-```
-
-- `rootPage` é setada em `app.component.ts` e seu valor padrão é _HomePage_.
-
-## Criação de novas páginas
+### Criação de novas páginas
 
 Através do ionic CLI é possível criar novas páginas:
 ```
@@ -45,6 +31,7 @@ import { UsersPage } from '../pages/users/users';
     declarations: [
         MyApp,
         HomePage,
+	UsersPage,
     ],
     imports: [
         IonicModule.forRoot(MyApp),
@@ -53,8 +40,23 @@ import { UsersPage } from '../pages/users/users';
     entryComponents: [
         MyApp,
         HomePage,
+	UsersPage,
     ],
 })
 export class AppModule {}
 
 ```
+
+## Navegação
+A navegação dentro do ionic funciona como o gerenciamento de uma pilha de páginas.
+
+É possível empilhar e desempilhar páginas e a página visualizada é sempre a página que está no topo.
+
+`ion-nav` inicializa a pilha de páginas.
+
+```html
+<ion-nav [root]="rootPage"><ion-nav>
+
+```
+
+- `rootPage` é setada em `app.component.ts` e seu valor padrão é _HomePage_.
