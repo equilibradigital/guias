@@ -64,7 +64,7 @@ A navegação dentro do ionic funciona como o gerenciamento de uma pilha de pág
 ## Navegação
 
 Agora considere que da Home (página criada automaticamente pelo ionic) você queira navegar para a página de usuários. Existem duas formas de fazer isso:
-### Através de um método
+### 1. Através de um método
 
 **home.html**
 ```html
@@ -101,7 +101,7 @@ import { UsersPage } from '../users/users';
 	}
 	
 ```
-### Através de diretivas de navegação
+### 2. Através de diretivas de navegação
 
 **home.html**
 ```html
@@ -132,3 +132,6 @@ import { UsersPage } from '../users/users';
 		userPage = UsersPage;
 	}
 ```
+### Removendo páginas da pilha
+Pode-se remover uma página do topo da pilha com `this.navCtrl.pop()` (Note que, por ser uma pilha, não há necessidade de passar argumentos).
+Também é possível remover todas as páginas da pilha e retornar à rootPage com `this.navCtrl.popToRoot()`.
