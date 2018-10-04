@@ -20,7 +20,7 @@ A navegação dentro do ionic funciona como o gerenciamento de uma pilha de pág
 
 - `rootPage` é setada em `app.component.ts` e seu valor padrão é _HomePage_.
 
-### Criação de novas páginas e navegação
+## Criação de novas páginas
 
 Através do ionic CLI é possível criar novas páginas:
 ```
