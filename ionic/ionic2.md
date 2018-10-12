@@ -134,4 +134,4 @@ import { UsersPage } from '../users/users';
 ```
 ### Removendo páginas da pilha
 Pode-se remover uma página do topo da pilha com `this.navCtrl.pop()` (Note que, por ser uma pilha, não há necessidade de passar argumentos).
-Também é possível remover todas as páginas da pilha e retornar à rootPage com `this.navCtrl.popToRoot()`.
+Também é possível remover todas as páginas da pilha e retornar à `rootPage` com `this.navCtrl.popToRoot()`.
